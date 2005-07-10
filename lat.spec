@@ -24,7 +24,7 @@ allow you to easily manage objects without having to deal with the
 intricacies of LDAP.
 
 %prep
-%setup -q 
+%setup -q
 %patch0 -p1
 %patch1 -p1
 
@@ -60,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/%{name}
 %attr(755,root,root) %{_libdir}/%{name}/*
-%{_mandir}/man1/lat.1.gz
+%{_mandir}/man1/lat.1*
 %{_datadir}/locale/*
 %{_datadir}/gnome/help/*
 %{_datadir}/omf/*
