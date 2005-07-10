@@ -64,6 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/locale/*
 %{_datadir}/gnome/help/*
 %{_datadir}/omf/*
-%{_datadir}/applications/%{name}.desktop
+%{_desktopdir}/%{name}.desktop
 %{_datadir}/application-registry/%{name}.applications
 %{_sharedstatedir}/scrollkeeper/*
