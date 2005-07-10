@@ -66,4 +66,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/omf/*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/application-registry/%{name}.applications
-%{_sharedstatedir}/
+%{_sharedstatedir}/scrollkeeper/*
