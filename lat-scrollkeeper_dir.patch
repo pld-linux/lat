@@ -1,0 +1,11 @@
+--- lat-0.6/omf.make~	2005-07-10 15:23:31.464149160 +0200
++++ lat-0.6/omf.make	2005-07-10 15:24:10.510213256 +0200
+@@ -27,7 +27,7 @@
+ #
+ 
+ omf_dest_dir=$(datadir)/omf/@PACKAGE@
+-scrollkeeper_localstate_dir = $(localstatedir)/scrollkeeper
++scrollkeeper_localstate_dir = $(sharedstatedir)/scrollkeeper
+ 
+ # At some point, it may be wise to change to something like this:
+ # scrollkeeper_localstate_dir = @SCROLLKEEPER_STATEDIR@
