@@ -11,8 +11,10 @@ Patch1:		%{name}-desktop.patch
 URL:		http://people.mmgsecurity.com/~lorenb/lat/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	dotnet-gtk-sharp-devel >= 1.9.5-1
+Requires(post,postun):	/sbin/ldconfig
+Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
