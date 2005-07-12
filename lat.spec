@@ -7,14 +7,14 @@ License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://people.mmgsecurity.com/~lorenb/lat/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	35813cf148fe7b69361f68b6b4eadb2c
+Source1:	%{name}.png
 Patch0:		%{name}-scrollkeeper_dir.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://people.mmgsecurity.com/~lorenb/lat/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dotnet-gtk-sharp-devel >= 1.9.5-1
-BuildRequires:	libtool >= 2:1.5.16
-Requires(post,postun):	/sbin/ldconfig
+BuildRequires:	mono-csharp >= 1.1.8
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,7 +40,6 @@ zarz±dzaæ obiektami bez potrzeby zajmowania siê komplikacjami LDAP.
 %patch1 -p1
 
 %build
-%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -54,29 +53,28 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -D %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+
+%find_lang %{name} --with-gnome
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/sbin/ldconfig
 %scrollkeeper_update_post
 
 %postun
-/sbin/ldconfig
 %scrollkeeper_update_postun
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/%{name}
 %attr(755,root,root) %{_libdir}/%{name}/*
 %{_mandir}/man1/lat.1*
-# TODO: FIX (use %find_lang)
-#%{_datadir}/locale/*
-# XXX: find_lang --with-gnome?
-%{_datadir}/gnome/help/*
 %{_datadir}/omf/*
 %{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/%{name}.png
 %{_datadir}/application-registry/%{name}.applications
 %{_sharedstatedir}/scrollkeeper/*
