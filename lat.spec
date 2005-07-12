@@ -1,4 +1,5 @@
-Summary:	LAT - LDAP Administration Tool.
+Summary:	LAT - LDAP Administration Tool
+Summary(pl):	LAT - narzêdzie administracyjne dla LDAP
 Name:		lat
 Version:	0.6
 Release:	0.1
@@ -11,8 +12,8 @@ Patch1:		%{name}-desktop.patch
 URL:		http://people.mmgsecurity.com/~lorenb/lat/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	dotnet-gtk-sharp-devel >= 1.9.5-1
+BuildRequires:	libtool >= 2:1.5.16
 Requires(post,postun):	/sbin/ldconfig
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,6 +25,14 @@ It can store profiles for quick access to different servers. There are
 also different views available such as Users, Groups and Hosts which
 allow you to easily manage objects without having to deal with the
 intricacies of LDAP.
+
+%description -l pl
+LAT to skrót od LDAP Administration Tool (narzêdzie administracyjne
+LDAP). Narzêdzie pozwala przegl±daæ katalogi oparte o LDAP i
+dodawaæ/modyfikowaæ/usuwaæ zawarte w nich wpisy. Mo¿e przechowywaæ
+profile do szybkiego dostêpu do ró¿nych serwerów. S± dostêpne tak¿e
+ró¿ne widoki, takie jak u¿ytkownicy, grupy i hosty, pozwalaj±ce ³atwo
+zarz±dzaæ obiektami bez potrzeby zajmowania siê komplikacjami LDAP.
 
 %prep
 %setup -q
@@ -63,7 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/%{name}
 %attr(755,root,root) %{_libdir}/%{name}/*
 %{_mandir}/man1/lat.1*
-%{_datadir}/locale/*
+# TODO: FIX (use %find_lang)
+#%{_datadir}/locale/*
+# XXX: find_lang --with-gnome?
 %{_datadir}/gnome/help/*
 %{_datadir}/omf/*
 %{_desktopdir}/%{name}.desktop
