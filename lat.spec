@@ -2,7 +2,7 @@ Summary:	LAT - LDAP Administration Tool
 Summary(pl):	LAT - narzêdzie administracyjne dla LDAP
 Name:		lat
 Version:	1.1.0
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dev.mmgsecurity.com/downloads/lat/1.1/lat-%{version}.tar.gz
