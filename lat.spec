@@ -1,16 +1,16 @@
 Summary:	LAT - LDAP Administration Tool
 Summary(pl):	LAT - narzêdzie administracyjne dla LDAP
 Name:		lat
-Version:	1.0.4
-Release:	2
+Version:	1.1.0
+Release:	0.1
 License:	GPL v2
 Group:		Applications/Networking
-Source0:	http://people.mmgsecurity.com/~lorenb/lat/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	3ef1b3779a52cb21adad93e23f2e75fa
+Source0:	http://dev.mmgsecurity.com/downloads/lat/1.1/lat-%{version}.tar.gz
+# Source0-md5:	ef0cf89fef74153f0d9f608eecb0eaeb
 Source1:	%{name}.png
 Patch0:		%{name}-scrollkeeper_dir.patch
 Patch1:		%{name}-desktop.patch
-URL:		http://people.mmgsecurity.com/~lorenb/lat/
+URL:		http://dev.mmgsecurity.com/projects/lat/index.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dotnet-gtk-sharp2-gnome-devel >= 2.4
