@@ -13,7 +13,7 @@ Patch1:		%{name}-desktop.patch
 URL:		http://dev.mmgsecurity.com/projects/lat/index.html
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	dotnet-gtk-sharp2-gnome-devel >= 2.4
+BuildRequires:	dotnet-gnome-sharp-devel >= 2.4
 BuildRequires:	intltool
 BuildRequires:	mono-csharp >= 1.1.12.1
 Requires:	scrollkeeper
