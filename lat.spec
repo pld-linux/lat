@@ -1,5 +1,5 @@
 Summary:	LAT - LDAP Administration Tool
-Summary(pl):	LAT - narzêdzie administracyjne dla LDAP
+Summary(pl.UTF-8):   LAT - narzÄ™dzie administracyjne dla LDAP
 Name:		lat
 Version:	1.1.0
 Release:	1
@@ -27,13 +27,13 @@ also different views available such as Users, Groups and Hosts which
 allow you to easily manage objects without having to deal with the
 intricacies of LDAP.
 
-%description -l pl
-LAT to skrót od LDAP Administration Tool (narzêdzie administracyjne
-LDAP). Narzêdzie pozwala przegl±daæ katalogi oparte o LDAP i
-dodawaæ/modyfikowaæ/usuwaæ zawarte w nich wpisy. Mo¿e przechowywaæ
-profile do szybkiego dostêpu do ró¿nych serwerów. S± dostêpne tak¿e
-ró¿ne widoki, takie jak u¿ytkownicy, grupy i hosty, pozwalaj±ce ³atwo
-zarz±dzaæ obiektami bez potrzeby zajmowania siê komplikacjami LDAP.
+%description -l pl.UTF-8
+LAT to skrÃ³t od LDAP Administration Tool (narzÄ™dzie administracyjne
+LDAP). NarzÄ™dzie pozwala przeglÄ…daÄ‡ katalogi oparte o LDAP i
+dodawaÄ‡/modyfikowaÄ‡/usuwaÄ‡ zawarte w nich wpisy. MoÅ¼e przechowywaÄ‡
+profile do szybkiego dostÄ™pu do rÃ³Å¼nych serwerÃ³w. SÄ… dostÄ™pne takÅ¼e
+rÃ³Å¼ne widoki, takie jak uÅ¼ytkownicy, grupy i hosty, pozwalajÄ…ce Å‚atwo
+zarzÄ…dzaÄ‡ obiektami bez potrzeby zajmowania siÄ™ komplikacjami LDAP.
 
 %prep
 %setup -q
