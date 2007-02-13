@@ -1,5 +1,5 @@
 Summary:	LAT - LDAP Administration Tool
-Summary(pl.UTF-8):   LAT - narzędzie administracyjne dla LDAP
+Summary(pl.UTF-8):	LAT - narzędzie administracyjne dla LDAP
 Name:		lat
 Version:	1.1.0
 Release:	1
