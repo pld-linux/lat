@@ -2,7 +2,7 @@ Summary:	LAT - LDAP Administration Tool
 Summary(pl.UTF-8):	LAT - narzędzie administracyjne dla LDAP
 Name:		lat
 Version:	1.2.1
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dev.mmgsecurity.com/downloads/lat/1.2/lat-%{version}.tar.gz
@@ -43,11 +43,11 @@ zarządzać obiektami bez potrzeby zajmowania się komplikacjami LDAP.
 %patch1 -p1
 
 %build
-#%%{__intltoolize}
+%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure --disable-nls
+%configure
 %{__make}
 
 %install
@@ -58,7 +58,8 @@ rm -rf $RPM_BUILD_ROOT
 
 install -D %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
-#%%find_lang %{name} --with-gnome
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/fr{_FR,}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,16 +70,14 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 %scrollkeeper_update_postun
 
-#%%files -f %{name}.lang
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
-%dir %{_prefix}/lib/%{name}
-%attr(755,root,root) %{_prefix}/lib/%{name}/*
+%dir %{_libdir}/%{name}
+%attr(755,root,root) %{_libdir}/%{name}/*
 %{_mandir}/man1/lat.1*
 %{_datadir}/omf/*
-%{_datadir}/gnome/help/lat
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
 %{_datadir}/application-registry/%{name}.applications
