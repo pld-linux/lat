@@ -1,12 +1,12 @@
 Summary:	LAT - LDAP Administration Tool
 Summary(pl.UTF-8):	LAT - narzędzie administracyjne dla LDAP
 Name:		lat
-Version:	1.1.0
-Release:	1
+Version:	1.2.1
+Release:	0.1
 License:	GPL v2
 Group:		Applications/Networking
-Source0:	http://dev.mmgsecurity.com/downloads/lat/1.1/lat-%{version}.tar.gz
-# Source0-md5:	ef0cf89fef74153f0d9f608eecb0eaeb
+Source0:	http://dev.mmgsecurity.com/downloads/lat/1.2/lat-%{version}.tar.gz
+# Source0-md5:	fd2f61c75409ee4b49c2a2a6c4a9e636
 Source1:	%{name}.png
 Patch0:		%{name}-scrollkeeper_dir.patch
 Patch1:		%{name}-desktop.patch
@@ -14,7 +14,9 @@ URL:		http://dev.mmgsecurity.com/projects/lat/index.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dotnet-gnome-sharp-devel >= 2.4
+BuildRequires:	gnome-keyring-devel
 BuildRequires:	intltool
+BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 1.1.12.1
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,12 +43,11 @@ zarządzać obiektami bez potrzeby zajmowania się komplikacjami LDAP.
 %patch1 -p1
 
 %build
-%{__intltoolize}
+#%%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
-%{__autoheader}
 %{__automake}
-%configure
+%configure --disable-nls
 %{__make}
 
 %install
@@ -57,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -D %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
-%find_lang %{name} --with-gnome
+#%%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,7 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 %scrollkeeper_update_postun
 
-%files -f %{name}.lang
+#%%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
@@ -76,6 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_prefix}/lib/%{name}/*
 %{_mandir}/man1/lat.1*
 %{_datadir}/omf/*
+%{_datadir}/gnome/help/lat
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
 %{_datadir}/application-registry/%{name}.applications
