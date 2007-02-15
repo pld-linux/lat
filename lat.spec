@@ -2,7 +2,7 @@ Summary:	LAT - LDAP Administration Tool
 Summary(pl.UTF-8):	LAT - narzędzie administracyjne dla LDAP
 Name:		lat
 Version:	1.2.1
-Release:	0.2
+Release:	0.3
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dev.mmgsecurity.com/downloads/lat/1.2/lat-%{version}.tar.gz
@@ -10,6 +10,7 @@ Source0:	http://dev.mmgsecurity.com/downloads/lat/1.2/lat-%{version}.tar.gz
 Source1:	%{name}.png
 Patch0:		%{name}-scrollkeeper_dir.patch
 Patch1:		%{name}-desktop.patch
+Patch2:		%{name}-lib64.patch
 URL:		http://dev.mmgsecurity.com/projects/lat/index.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -41,6 +42,7 @@ zarządzać obiektami bez potrzeby zajmowania się komplikacjami LDAP.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__intltoolize}
@@ -75,10 +77,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/%{name}
-%attr(755,root,root) %{_libdir}/%{name}/*
+%attr(755,root,root) %{_libdir}/%{name}/*.dll*
+%attr(755,root,root) %{_libdir}/%{name}/*.exe
+%dir %{_libdir}/%{name}/plugins
+%attr(755,root,root) %{_libdir}/%{name}/plugins/*
 %{_mandir}/man1/lat.1*
 %{_datadir}/omf/*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
 %{_datadir}/application-registry/%{name}.applications
 %{_sharedstatedir}/scrollkeeper/*
+%{_pkgconfigdir}/*.pc
