@@ -61,6 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 install -D %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/locale/fr{_FR,}
+mv -f $RPM_BUILD_ROOT%{_datadir}/locale/it{_IT,}
 %find_lang %{name} --with-gnome
 
 %clean
