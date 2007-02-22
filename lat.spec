@@ -2,7 +2,7 @@ Summary:	LAT - LDAP Administration Tool
 Summary(pl.UTF-8):	LAT - narzędzie administracyjne dla LDAP
 Name:		lat
 Version:	1.2.2
-Release:	0.1
+Release:	0.2
 License:	GPL v2
 Group:		Applications/Networking
 Source0:	http://dev.mmgsecurity.com/downloads/lat/1.2/lat-%{version}.tar.gz
@@ -19,6 +19,7 @@ BuildRequires:	gnome-keyring-devel
 BuildRequires:	intltool
 BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 1.1.12.1
+BuildRequires:	scrollkeeper
 Requires:	scrollkeeper
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
