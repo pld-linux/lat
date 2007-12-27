@@ -4,7 +4,7 @@
  StartupNotify=false
  Terminal=false
  Type=Application
--Categories=Application;System;
+-Categories=GNOME;GTK;Network;
 +Categories=GTK;Network;Database;
 +
 +# vi:encoding=utf-8
