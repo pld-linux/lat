@@ -5,6 +5,6 @@
  Terminal=false
  Type=Application
 -Categories=GNOME;GTK;Network;
-+Categories=GTK;Network;Database;
++Categories=GNOME;GTK;Network;Database;
 +
 +# vi:encoding=utf-8
