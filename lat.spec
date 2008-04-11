@@ -21,7 +21,7 @@ BuildRequires:	libtool
 BuildRequires:	mono-csharp >= 1.1.12.1
 BuildRequires:	scrollkeeper
 Requires:	scrollkeeper
-ExclusiveArch:	%{ix86} %{x8664} alpha arm hppa ia64 mips ppc s390 s390x sparc
+ExclusiveArch:	%{ix86} %{x8664} alpha arm hppa ia64 mips ppc s390 s390x sparc sparcv9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
